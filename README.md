@@ -1,3 +1,3 @@
-### Discord Invite Api
+### All Discord Api's
 
-Retrieving server information via @discord invite api
+All @discord APIs and how they work.
