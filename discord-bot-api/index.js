@@ -58,7 +58,7 @@ client.on('messageCreate', async (message) => {
 
     } catch (error) {
         console.error(error.response?.data || error.message);
-        message.reply('Kullanıcı bilgileri alınırken bir hata oluştu. ID doğru mu veya botun gerekli izinleri var mı kontrol et.');
+        message.reply('Kullanıcı bilgileri alınırken bir hata oluştu.');
     }
 });
 
