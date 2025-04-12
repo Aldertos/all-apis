@@ -45,11 +45,11 @@ client.on('messageCreate', async (message) => {
         const embed = new EmbedBuilder()
             .setTitle('📌 User Info')
             .setDescription(
-                `**🏷️ Name:** ${user.username}\n` +
+                `**🏷️ Adı:** ${user.username}\n` +
                 `**🆔 ID:** ${user.id}\n` +
-                `**🌍 Global Name:** ${user.global_name ?? 'Yok'}\n` +
-                `**📝 Bio:** ${profile.bio ?? 'Yok'}\n` +
-                `**🏳️ Pronouns:** ${profile.pronouns ?? 'Yok'}`
+                `**🌍 Görünen Adı:** ${user.global_name ?? 'Yok'}\n` +
+                `**📝 Hakkında:** ${profile.bio ?? 'Yok'}\n` +
+                `**🏳️ Hitaplar:** ${profile.pronouns ?? 'Yok'}`
             )
             .setColor(0x5865F2);
 
