@@ -48,7 +48,7 @@ client.on('messageCreate', async (message) => {
                 `**🏷️ Name:** ${user.username}\n` +
                 `**🆔 ID:** ${user.id}\n` +
                 `**🌍 Global Name:** ${user.global_name ?? 'Yok'}\n` +
-                `**📝 Bio:** ${profile ?? 'Yok'}\n` +
+                `**📝 Bio:** ${profile.bio ?? 'Yok'}\n` +
                 `**🏳️ Pronouns:** ${profile.pronouns ?? 'Yok'}`
             )
             .setColor(0x5865F2);
