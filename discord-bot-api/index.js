@@ -2,20 +2,18 @@
 
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const axios = require('axios');
+const ayarlar = require('./settings.js')
 
 const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
-
-const TOKEN = 'bot token here';
-const USERGETTOKEN = 'account token'
 
 client.on('ready', () => {
     console.log(`Bot ${client.user.tag} olarak giriş yaptı!`);
 });
 
 client.on('messageCreate', async (message) => {
-    if (!message.content.startsWith('!get') || message.author.bot) return;
+    if (!message.content.startsWith(`${ayarlar.prefix}get`) || message.author.bot) return;
 
     const args = message.content.split(' ');
     const userId = args[1];
@@ -24,7 +22,7 @@ client.on('messageCreate', async (message) => {
     try {
         const { data } = await axios.get(`https://discord.com/api/v9/users/${userId}/profile`, {
             headers: {
-                Authorization: USERGETTOKEN,
+                Authorization: ayarlar.getUserToken,
             }
         });
 
@@ -64,4 +62,4 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login(TOKEN);
+client.login(ayarlar.token);
